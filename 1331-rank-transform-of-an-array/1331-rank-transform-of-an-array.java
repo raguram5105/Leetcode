@@ -1,0 +1,20 @@
+class Solution {
+    public int[] arrayRankTransform(int[] arr) {
+        int[] t=arr.clone();
+        Arrays.sort(t);
+        HashMap<Integer, Integer> rank=new HashMap<>();
+        int r=1;
+        for(int num:t){
+            if(!rank.containsKey(num)){
+                rank.put(num,r++);
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            arr[i]=rank.get(arr[i]);
+        }return arr;
+    }
+}
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
