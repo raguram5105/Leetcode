@@ -1,0 +1,16 @@
+class Solution {
+    public int uniqueXorTriplets(int[] nums) {
+        int n=nums.length;
+        if(n<3){
+            return n;
+        }
+        int np=1;
+        while(np<=n){
+            np<<=1;
+        }return np;
+    }
+}
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
