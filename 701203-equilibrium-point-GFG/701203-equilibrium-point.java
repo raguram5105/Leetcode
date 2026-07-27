@@ -7,18 +7,13 @@ class Solution {
         for(int i=1;i<n;i++){
             pr[i]=pr[i-1]+arr[i];
         }
-        su[n-1]=arr[n-1];
-        for(int i=n-2;i>=0;i--){
-            su[i]=su[i+1]+arr[i];
-        }
+        int s=pr[n-1];
         for(int i=0;i<n;i++){
-            if(pr[i]==su[i]){
+            if((pr[i]-arr[i])==(s-pr[i])){
                 return i;
             }
         }
         return -1;
-        
-        
     }
 }
 
