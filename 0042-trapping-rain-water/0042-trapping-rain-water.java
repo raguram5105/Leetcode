@@ -1,19 +1,25 @@
 class Solution {
     public int trap(int[] h) {
-        int l=0,r=h.length-1,lm=h[l],rm=h[r];
-        int w=0;
-        while(l<r){
-            if(lm<rm){
-                l++;
-                lm=Math.max(lm,h[l]);
-                w+=lm-h[l];
-            }else{
-                r--;
-                rm=Math.max(rm,h[r]);
-                w+=rm-h[r];
-            }
+        int n=h.length;
+        int[] l=new int[n];
+        int[] r=new int[n];
+        int t=0;
+        int mx=-1;
+        for(int i=0;i<n;i++){
+            mx=Math.max(mx,h[i]);
+            l[t++]=mx;
         }
-        return w;
+        t=n-1;
+        int sum=0;
+        mx=-1;
+        for(int i=n-1;i>=0;i--){
+            mx=Math.max(mx,h[i]);
+            r[t--]=mx;
+        }
+        for(int i=0;i<n;i++){
+            sum+=(Math.min(l[i],r[i])-h[i]);
+        }
+        return sum;
     }
 }
 
