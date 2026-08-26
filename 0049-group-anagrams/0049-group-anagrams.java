@@ -10,7 +10,7 @@ class Solution {
             }
             hm.get(s).add(strs[i]);
         }
-        return (new ArrayList<>(hm.values()));
+        return new ArrayList<>(hm.values());
         
     }
 }
